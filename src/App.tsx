@@ -9,21 +9,13 @@ export function App() {
   return (
     <>
       <NavBar />
-      <Container maxWidth={false}>
+      <Container  maxWidth={false}>
         <Grid container >
-          <Grid item xs="auto">
+          <Grid item xs={3}>
             <CardPokemon />
           </Grid>
 
-          <Grid item xs={6}>
-            <CardPokemon />
-          </Grid>
-
-          <Grid item xs>
-            <CardPokemon />
-          </Grid>
-
-          {/* <Grid item xs="auto">
+          <Grid item xs={3}>
             <CardPokemon />
           </Grid>
 
@@ -33,7 +25,15 @@ export function App() {
 
           <Grid item xs={3}>
             <CardPokemon />
-          </Grid> */}
+          </Grid>
+
+          <Grid item xs={3}>
+            <CardPokemon />
+          </Grid>
+
+          <Grid item xs={3}>
+            <CardPokemon />
+          </Grid>
 
 
         </Grid>
