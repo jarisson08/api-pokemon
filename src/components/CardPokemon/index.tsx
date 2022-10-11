@@ -6,21 +6,27 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { IPokemon } from '../../pages/home';
 
-export function CardPokemon() {
+
+
+export default function CardPokemon({name}:IPokemon) {
+  
+  
+  
   return (
-    // <Container maxWidth="sm">
+    
 
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        // image="/static/images/cards/contemplative-reptile.jpg"
         alt="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+         {name}
         </Typography>
         {/* <Typography variant="body2" color="text.secondary">
           Lizards are a widespread group of squamate reptiles, with over 6,000

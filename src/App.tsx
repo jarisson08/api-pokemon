@@ -1,10 +1,8 @@
-//import { Home } from "./pages/home"
+import  Home  from "./pages/home"
+import  NavBar  from "./components/NavBar";
 
 
-import { NavBar } from "./components/NavBar";
-import { Home } from "./pages/home";
-
-export function App() {
+export default function App() {
   return (
     <>
       <NavBar />
@@ -14,4 +12,4 @@ export function App() {
   );
 }
 
-export default App;
+

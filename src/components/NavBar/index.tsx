@@ -51,7 +51,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export function NavBar() {
+export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "1em" }}>
       <AppBar position="static">
