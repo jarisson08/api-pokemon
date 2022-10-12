@@ -9,21 +9,25 @@ import CardPokemon from '../components/CardPokemon';
 
 
 type PokemonType= {
-    type: string;
+    type: {name: string};
+   
 }
 
 
 export type IPokemon= {
     name: string;
     url: string;
-    id: number
-    types: PokemonType[]
+    id: number;
+    types: PokemonType[];
+   
 }
 
 type Request={
     id: number;
     types: PokemonType[]
     name: string;
+   
+    
 }
 
 export default function Home() {
@@ -36,27 +40,32 @@ export default function Home() {
             const {results}= response.data
             
             
+            
             const payloadPokemons= await Promise.all(
                 results.map(async (pokemon: IPokemon) => {
-                    const {id, name, types}= await getMoreInfo(pokemon.url);
+                    const {id, name,  types}= await getMoreInfo(pokemon.url);
                     //console.log({id, name, types})
                     return {
                         name,
                         id,
-                        types
+                        types, 
+                        
                     }
                 })
                 
             )
-            console.log(payloadPokemons)
+            
             setPokemons(payloadPokemons)
         }
         getPokemons()
     }, [])
 
+    
+
     async function getMoreInfo(url:string): Promise<Request>{
         const response= await api.get(url);
-        const {id, name, types}= response.data
+        console.log(response)
+        const {id, name,  types}= response.data
         
         return {
             id, name, types

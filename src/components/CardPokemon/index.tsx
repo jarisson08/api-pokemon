@@ -10,7 +10,7 @@ import { IPokemon } from '../../pages/home';
 
 
 
-export default function CardPokemon({name}:IPokemon) {
+export default function CardPokemon({name, types}:IPokemon) {
   
   
   
@@ -21,12 +21,16 @@ export default function CardPokemon({name}:IPokemon) {
       <CardMedia
         component="img"
         height="140"
-        // image="/static/images/cards/contemplative-reptile.jpg"
+        //image={sprites}
+        
         alt="green iguana"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+      <Typography  gutterBottom variant="h5" sx={{backgroundColor: "pink"}} component="div">
          {name}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+         {types.map(pokemonType=> pokemonType.type.name)}
         </Typography>
         {/* <Typography variant="body2" color="text.secondary">
           Lizards are a widespread group of squamate reptiles, with over 6,000
