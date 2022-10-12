@@ -8,11 +8,33 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { IPokemon } from '../../pages/home';
 
+// interface PokemonType {
+//   types: {name: string}
+//   name: string;
+//   id: number;
 
 
-export default function CardPokemon({name, types}:IPokemon) {
+// }
+// interface Pokemon {
+//   name: string;
+//   url: string;
+//   id: number;
+//   types: PokemonType[]
+// }
+// interface Props {
+//   data: Pokemon
+// }
+
+
+
+export default function CardPokemon({name, types}: IPokemon) {
   
-  
+  function typeHandler(){
+    if(types[1]){
+      return types[0].type.name + " " + types[1].type.name 
+    }
+    return types[0].type.name
+  }
   
   return (
     
@@ -30,8 +52,11 @@ export default function CardPokemon({name, types}:IPokemon) {
          {name}
         </Typography>
         <Typography gutterBottom variant="h5" component="div">
-         {types.map(pokemonType=> pokemonType.type.name)}
+        {typeHandler()}
         </Typography>
+        {/* <Typography gutterBottom variant="h5" component="div">
+        {types.map(pokemonType => pokemonType.type.name)}
+        </Typography> */}
         {/* <Typography variant="body2" color="text.secondary">
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica

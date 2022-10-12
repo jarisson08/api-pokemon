@@ -65,7 +65,7 @@ export default function Home() {
     async function getMoreInfo(url:string): Promise<Request>{
         const response= await api.get(url);
         console.log(response)
-        const {id, name,  types}= response.data
+        const {id, name, types}= response.data
         
         return {
             id, name, types
