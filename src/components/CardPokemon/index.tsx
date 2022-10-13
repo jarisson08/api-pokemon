@@ -28,6 +28,8 @@ import { IPokemon } from '../../pages/home';
 
 
 export default function CardPokemon({name, types}: IPokemon) {
+
+   
   
   function typeHandler(){
     if(types[1]){
