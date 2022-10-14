@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import CardPokemon from '../components/CardPokemon';
 
  import { api } from '../services/api';
+import { HomeContainer } from './styles';
 
 
 
@@ -32,61 +33,72 @@ type Request={
 
 export default function Home() {
 
-     const [pokemons, setPokemons] = useState<IPokemon[]>([])
+    return(
+        <HomeContainer>
+         <CardPokemon />
+         <CardPokemon />
+         <CardPokemon />
+         <CardPokemon />
+         
+        </HomeContainer>
+       
+    )
+
+    //  const [pokemons, setPokemons] = useState<IPokemon[]>([])
     
-    useEffect(()=> {
-        async function getPokemons() {
-            const response= await api.get('/pokemon?limit=5&offset=0')
-            const {results}= response.data
+    // useEffect(()=> {
+    //     async function getPokemons() {
+    //         const response= await api.get('/pokemon?limit=5&offset=0')
+    //         const {results}= response.data
             
             
             
-            const payloadPokemons= await Promise.all(
-                results.map(async (pokemon: IPokemon) => {
-                    const {id, name,  types}= await getMoreInfo(pokemon.url);
-                    //console.log({id, name, types})
-                    return {
-                        name,
-                        id,
-                        types, 
+    //         const payloadPokemons= await Promise.all(
+    //             results.map(async (pokemon: IPokemon) => {
+    //                 const {id, name,  types}= await getMoreInfo(pokemon.url);
+    //                 //console.log({id, name, types})
+    //                 return {
+    //                     name,
+    //                     id,
+    //                     types, 
                         
-                    }
-                })
+    //                 }
+    //             })
                 
-            )
+    //         )
             
-            setPokemons(payloadPokemons)
-        }
-        getPokemons()
-    }, [])
+    //         setPokemons(payloadPokemons)
+    //     }
+    //     getPokemons()
+    // }, [])
 
     
 
-    async function getMoreInfo(url:string): Promise<Request>{
-        const response= await api.get(url);
-        console.log(response)
-        const {id, name, types}= response.data
+    // async function getMoreInfo(url:string): Promise<Request>{
+    //     const response= await api.get(url);
+    //     console.log(response)
+    //     const {id, name, types}= response.data
         
-        return {
-            id, name, types
-        }
-    }
+    //     return {
+    //         id, name, types
+    //     }
+    // }
 
        
 
-    return (
-        <>
-            <Container maxWidth={false}>
-                <Grid container >
+    // return (
+    //     <>
+    //         <Container maxWidth={false}>
+    //             <Grid container >
 
-                    {pokemons.map((pokemon, key) => (
-                        <Grid key= {key} item xs={3}>
-                            <CardPokemon types={pokemon.types} id={pokemon.id} url={pokemon.url} name= {pokemon.name} />
-                        </Grid>
-                    ))}
-                </Grid>
+    //                 {pokemons.map((pokemon, key) => (
+    //                     <Grid key= {key} item xs={3}>
+    //                         <CardPokemon types={pokemon.types} id={pokemon.id} url={pokemon.url} name= {pokemon.name} />
+    //                     </Grid>
+    //                 ))}
+    //             </Grid>
 
-            </Container>
-        </>
-    )
+    //         </Container>
+    //     </>
+    // )
 }
