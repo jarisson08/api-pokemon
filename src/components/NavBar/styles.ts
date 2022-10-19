@@ -7,7 +7,7 @@ export const NavBarContainer = styled.div`
   font-size: 24px;
   font-family: "Poppins", sans-serif;
 
-  background-color: ${(props) => props.theme["bug"]};
+  background-color: ${(props) => props.theme.colors['light-gray']};
 
   display: flex;
   align-items: center;
@@ -17,6 +17,7 @@ export const NavBarContainer = styled.div`
     border: none;
     border-radius: 0.5rem;
     padding: 0.5rem;
+    margin-right: 1rem;
   }
 
   img {

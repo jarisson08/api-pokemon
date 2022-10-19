@@ -1,13 +1,13 @@
 export const defaultTheme = {
     white: '#fff',
-
+colors:{
     'dark-gray':'#212121',
     'medium-gray':'#666666',
     'light-gray':'#E0E0E0',
     'background':'#F7F7F7',
 
   
-    'type': '#666666',
+    'neutral': '#666666',
     'normal': '#AAA67F',
     'fighting': '#C12239',
     'flying': '#A891EC',
@@ -26,5 +26,6 @@ export const defaultTheme = {
     'dragon': '#7037FF',
     'dark': '#75574C',
     'fairy': '#E69EAC',
+}
 
   } as const

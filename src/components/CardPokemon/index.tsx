@@ -8,13 +8,13 @@ export default function CardPokemon({name, types}: IPokemon) {
     
   function typeHandler(){
     if(types[1]){
-      return types[0].type.name + " " + types[1].type.name 
+      return types[0].type+ " " + types[1].type
     }
-    return types[0].type.name
+    return types[0].type
   }
 
   return (
-    <CardContainer>
+    <CardContainer type={types[0].type.name}>
 
       <div>
       <section>

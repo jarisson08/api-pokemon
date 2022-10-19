@@ -6,10 +6,11 @@ export const GlobalStyle= createGlobalStyle`
     margin: 0;
     padding: 0.25rem;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: ${props => props.theme['background']};
+    background-color: ${props => props.theme.colors['background']};
  
     
 

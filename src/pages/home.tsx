@@ -42,7 +42,7 @@ export default function Home() {
     
     useEffect(()=> {
         async function getPokemons() {
-            const response= await api.get('/pokemon?limit=5&offset=0')
+            const response= await api.get('/pokemon?limit=56&offset=0')
             const {results}= response.data
             
             

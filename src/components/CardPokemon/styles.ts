@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.main`
+interface PokemonBorderColor {
+  type: string
+}
+
+export const CardContainer = styled.main<PokemonBorderColor>`
   
   div {
     width: 18.75rem;
     height: 14.25rem;
     margin: 1.5rem;
-    border: 2px solid;
+    border: 3px solid ${({theme, type})=> theme.colors[type]};
+    
     border-radius: 0.5rem;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+    
     padding: 0;
     margin: 0;
     display: flex;
@@ -31,11 +36,13 @@ export const CardContainer = styled.main`
   }
 
   footer {
-    background-color: pink;
+    background-color: ${({theme, type})=> theme.colors[type]};
     text-align: center;
     border-radius: 0 0 0.35rem 0.35rem;
-
+    text-transform: capitalize;
     padding: 0.75rem;
+    color: ${props=> props.theme['white']};
+    
   }
 
   transition: 0.3s;
