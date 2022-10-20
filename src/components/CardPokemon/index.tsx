@@ -3,7 +3,7 @@ import { IPokemon } from '../../pages/home';
 import pokeball from '../../assets/Pokeball.svg'
 import { CardContainer } from './styles';
 
-export default function CardPokemon({name, types}: IPokemon) {
+export default function CardPokemon({name, sprites, types}: IPokemon) {
 
     
   function typeHandler(){
@@ -18,7 +18,7 @@ export default function CardPokemon({name, types}: IPokemon) {
 
       <div>
       <section>
-      <img src={pokeball} alt="pokemon" />
+      <img src={sprites} alt={name} />
       </section>
       
       

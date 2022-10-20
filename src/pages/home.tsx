@@ -14,43 +14,42 @@ type PokemonType= {
    
 }
 
+type PokeImgs= {
+    front_default: string
+}
+
 
 export type IPokemon= {
     name: string;
     url: string;
     id: number;
     types: PokemonType[];
-   
+    sprites:PokeImgs;
 }
 
 type Request={
     id: number;
-    types: PokemonType[]
+    types: PokemonType[];
     name: string;
-   
+    sprites:PokeImgs;
     
 }
 
 export default function Home() {
 
-
-   
-
-   
-
-     const [pokemons, setPokemons] = useState<IPokemon[]>([])
+    const [pokemons, setPokemons] = useState<IPokemon[]>([])
     
     useEffect(()=> {
         async function getPokemons() {
-            const response= await api.get('/pokemon?limit=56&offset=0')
-            const {results}= response.data
+            const response= await api.get('/pokemon?limit=1&offset=0')
+           const {results}= response.data
             
             
             
             const payloadPokemons= await Promise.all(
                 results.map(async (pokemon: IPokemon) => {
-                    const {id, name,  types}= await getMoreInfo(pokemon.url);
-                    //console.log({id, name, types})
+                    const {id, name, types}= await getMoreInfo(pokemon.url);
+                    //console.log({id,})
                     return {
                         name,
                         id,
@@ -70,11 +69,11 @@ export default function Home() {
 
     async function getMoreInfo(url:string): Promise<Request>{
         const response= await api.get(url);
-        console.log(response)
-        const {id, name, types}= response.data
         
+        const {id, sprites, name, types}= response.data
+        console.log({sprites})
         return {
-            id, name, types
+            id, name, sprites, types
         }
     }
 
@@ -88,7 +87,7 @@ export default function Home() {
 
                     {pokemons.map((pokemon, key) => (
                         <Grid key= {key} item xs={3}>
-                            <CardPokemon types={pokemon.types} id={pokemon.id} url={pokemon.url} name= {pokemon.name} />
+                            <CardPokemon sprites={pokemon.sprites} types={pokemon.types} id={pokemon.id} url={pokemon.url} name= {pokemon.name} />
                         </Grid>
                     ))}
                 
