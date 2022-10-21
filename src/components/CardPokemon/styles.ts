@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 interface PokemonBorderColor {
-  type: string
+  type: string;
 }
 
 export const CardContainer = styled.main<PokemonBorderColor>`
   
   div {
-    width: 18.75rem;
-    height: 14.25rem;
+    width: 16.75rem;
+    height: 12.25rem;
     margin: 1.5rem;
     border: 3px solid ${({theme, type})=> theme.colors[type]};
     
@@ -25,7 +25,7 @@ export const CardContainer = styled.main<PokemonBorderColor>`
 
   section {
     min-width: 100%;
-    height: 200px;
+    height: 100%;
     overflow: hidden;
   }
 

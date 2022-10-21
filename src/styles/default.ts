@@ -1,5 +1,5 @@
-export const defaultTheme = {
-    white: '#fff',
+export const defaultTheme= {
+    
 colors:{
     'dark-gray':'#212121',
     'medium-gray':'#666666',
@@ -28,4 +28,4 @@ colors:{
     'fairy': '#E69EAC',
 }
 
-  } as const
+  }

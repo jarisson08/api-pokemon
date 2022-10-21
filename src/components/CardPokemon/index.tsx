@@ -6,19 +6,19 @@ import { CardContainer } from './styles';
 export default function CardPokemon({name, sprites, types}: IPokemon) {
 
     
-  function typeHandler(){
-    if(types[1]){
-      return types[0].type+ " " + types[1].type
-    }
-    return types[0].type
-  }
+  // function typeHandler(){
+  //   if(types[1]){
+  //     return types[0].type+ " " + types[1].type
+  //   }
+  //   return types[0].type
+  // }
 
   return (
     <CardContainer type={types[0].type.name}>
 
       <div>
       <section>
-      <img src={sprites} alt={name} />
+      <img src={sprites.front_default} alt={name} />
       </section>
       
       
