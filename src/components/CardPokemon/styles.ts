@@ -41,7 +41,7 @@ export const CardContainer = styled.main<PokemonBorderColor>`
     border-radius: 0 0 0.35rem 0.35rem;
     text-transform: capitalize;
     padding: 0.75rem;
-    color: ${props=> props.theme['white']};
+    color: ${props=> props.theme.colors['white']};
     
   }
 

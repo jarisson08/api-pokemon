@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NavBarContainer = styled.div`
+export const SearchBarContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   font-weight: 700;
@@ -27,7 +27,7 @@ export const NavBarContainer = styled.div`
   }
 `;
 
-export const NavBarContent = styled.div`
+export const SearchBarContent = styled.div`
   display: flex;
   align-items: center;
 `;

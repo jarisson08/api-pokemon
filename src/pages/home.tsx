@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import CardPokemon from '../components/CardPokemon';
-
- import { api } from '../services/api';
+import { api } from '../services/api';
 import { HomeContainer } from './styles';
 
 

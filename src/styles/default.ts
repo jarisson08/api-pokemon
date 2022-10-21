@@ -1,6 +1,9 @@
+
+
 export const defaultTheme= {
-    
-colors:{
+    colors: {
+    'white': '#ffffff',
+
     'dark-gray':'#212121',
     'medium-gray':'#666666',
     'light-gray':'#E0E0E0',
@@ -26,6 +29,10 @@ colors:{
     'dragon': '#7037FF',
     'dark': '#75574C',
     'fairy': '#E69EAC',
-}
 
-  }
+    },
+
+    
+  } as const
+
+  

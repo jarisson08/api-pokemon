@@ -1,6 +1,5 @@
 
 import { IPokemon } from '../../pages/home';
-import pokeball from '../../assets/Pokeball.svg'
 import { CardContainer } from './styles';
 
 export default function CardPokemon({name, sprites, types}: IPokemon) {

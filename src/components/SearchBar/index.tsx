@@ -1,19 +1,28 @@
-import { NavBarContainer, NavBarContent } from "./styles";
+import { SearchBarContainer, SearchBarContent } from "./styles";
 import pokeball from '../../assets/Pokeball.svg'
+import { useState } from "react";
 
-export default function NavBar() {
+export default function SearchBar() {
+
+  const [search, setSearch]= useState('');
+
+  function onSearchHandler(pokemon) {
+    setSearch(pokemon);
+  }
+
+
 
   return (
     
-    <NavBarContainer>
-      <NavBarContent>
+    <SearchBarContainer>
+      <SearchBarContent>
       <img src={pokeball}/>
       Pokédex
-      </NavBarContent>
+      </SearchBarContent>
       
 
       <input placeholder='Procurar' type='text'></input>
-    </NavBarContainer>
+    </SearchBarContainer>
   )
 
 
