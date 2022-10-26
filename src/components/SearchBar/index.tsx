@@ -1,22 +1,12 @@
 import { SearchBarContainer, SearchBarContent } from "./styles";
 import pokeball from '../../assets/Pokeball.svg'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { IPokemon, Request } from "../../pages/home";
+import { api } from "../../services/api";
 
-export default function SearchBar(props: any) {
+export default function SearchBar() {
 
-  const [search, setSearch]= useState('');
-  const {onSearch}= props
-
-  function onChangeHandler(pokemon: any) {
-    setSearch(pokemon.target.value)
-    if(pokemon.target.value.length===0){
-      onSearch(undefined)
-    }
-  }
-
-  function onButtonHandler(){
-    onSearch(search)
-  }
+ 
 
 
 
@@ -27,9 +17,7 @@ export default function SearchBar(props: any) {
       <img src={pokeball}/>
       Pokédex
       </SearchBarContent>
-      
-
-      <input placeholder='Procurar' type='text' onChange={onChangeHandler}></input>
+      <input placeholder='Procurar' type='text' />
     </SearchBarContainer>
   )
 
