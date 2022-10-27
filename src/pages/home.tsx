@@ -35,8 +35,9 @@ export type Request={
 }
 
 export default function Home(props:any) {
-    const{pokemons}= props
-
+    const {pokemons}= props
+    
+    
     // const [pokemons, setPokemons] = useState<IPokemon[]>([])
     // const [search, setSearch]= useState('');
      
@@ -83,7 +84,6 @@ export default function Home(props:any) {
         <>
             <HomeContainer>
                 
-            <input placeholder='Procurar' type='text' onChange={(pokemon)=> console.log(pokemon.target.value)} />
 
                     {pokemons.map((pokemon:any, key:any) => (
                         

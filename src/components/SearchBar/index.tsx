@@ -4,9 +4,14 @@ import { useEffect, useState } from "react";
 import { IPokemon, Request } from "../../pages/home";
 import { api } from "../../services/api";
 
-export default function SearchBar() {
+export default function SearchBar(props:any) {
 
- 
+ const {searchPokemons}= props
+ console.log(searchPokemons)
+
+ function onHandleChange(event){
+  
+ }
 
 
 

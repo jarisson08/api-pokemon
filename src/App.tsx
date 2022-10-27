@@ -12,27 +12,26 @@ export default function App() {
   
   const [pokemons, setPokemons] = useState<IPokemon[]>([])
   
-   
+  async function getPokemons() {
+    const response= await api.get('/pokemon?limit=15&offset=0')
+   const {results}= response.data
+    
+    
+    
+    const payloadPokemons= await Promise.all(
+        results.map(async (pokemon: IPokemon) => {
+            const {id, types, name, sprites}= await getMoreInfo(pokemon.url);
+            //console.log({id,})
+            return {id, types, name, sprites}
+        })
+        
+    )
+    
+    setPokemons(payloadPokemons)
+}
   
   useEffect(()=> {
-      async function getPokemons() {
-          const response= await api.get('/pokemon?limit=15&offset=0')
-         const {results}= response.data
-          
-          
-          
-          const payloadPokemons= await Promise.all(
-              results.map(async (pokemon: IPokemon) => {
-                  const {id, types, name, sprites}= await getMoreInfo(pokemon.url);
-                  //console.log({id,})
-                  return {id, types, name, sprites}
-              })
-              
-          )
-          
-          setPokemons(payloadPokemons)
-      }
-      getPokemons()
+       getPokemons()
   }, [])
 
   
@@ -50,10 +49,18 @@ export default function App() {
       }
   }
 
+  async function onHandleChange(pokemon:any){
+    if(!pokemon){
+        return getPokemons()
+    }
+
+    const result= getMoreInfo
+   }
+
   return (
     <ThemeProvider theme= {defaultTheme} >
     
-       <SearchBar />  
+       <SearchBar searchPokemons={pokemons} />  
        <Home pokemons={pokemons}/> 
      <GlobalStyle />
     </ThemeProvider>
