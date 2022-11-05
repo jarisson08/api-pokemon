@@ -82,16 +82,10 @@ export default function Home(props:any) {
 
     return (
         <>
-            <HomeContainer>
+            <HomeContainer >
                 
 
-                    {pokemons.map((pokemon:any, key:any) => (
-                        
-                            <CardPokemon key= {key} sprites={pokemon.sprites} types={pokemon.types} id={pokemon.id} url={pokemon.url} name= {pokemon.name} />
-                            
-                        
-                        
-                    ))}
+                 
                 
                         
             </HomeContainer>

@@ -4,14 +4,11 @@ import { useEffect, useState } from "react";
 import { IPokemon, Request } from "../../pages/home";
 import { api } from "../../services/api";
 
+
 export default function SearchBar(props:any) {
 
- const {searchPokemons}= props
- console.log(searchPokemons)
+ 
 
- function onHandleChange(event){
-  
- }
 
 
 
@@ -20,14 +17,14 @@ export default function SearchBar(props:any) {
     <SearchBarContainer>
       <SearchBarContent>
       <img src={pokeball}/>
-      Pokédex
+      Pokédex 
       </SearchBarContent>
-      <input placeholder='Procurar' type='text' />
+      <input onChange={props.handleSetSearch} placeholder='Procurar' type='text' />
     </SearchBarContainer>
   )
 
-
 }
+
 
 
 
