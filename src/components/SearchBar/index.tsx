@@ -7,10 +7,26 @@ import { api } from "../../services/api";
 
 export default function SearchBar(props:any) {
 
+ const { pokemons, searchPokemons}= props
  
+ const [search, setSearch]= useState('')
+
+ function getFilteredPokemons(search:any, pokemons:any){
+  if(!search){
+    return pokemons;
+  }
+    return pokemons.filter((chosenPokemon:any) => chosenPokemon.name.includes(search))
+  }
+
+  const handleSetSearch= (e: any)=> {
+
+    setSearch(e.target.value)
+    console.log(filteredPokemons)
+    
+  }
 
 
-
+  const filteredPokemons= getFilteredPokemons(search ,pokemons)
 
   return (
     
